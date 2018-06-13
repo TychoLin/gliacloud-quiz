@@ -30,6 +30,14 @@ data = []
 for url in urls:
     data.append(path.split(url)[1])
 
+"""
+k1 is filename
+k2 is file total count
+
+sorted function guarantee that sorts is stable.
+first sort filename ascendingly
+then sort “file total count” descendingly
+"""
 data = Counter(data)
 data = ((k1, k2) for k1, k2 in data.items())
 data = sorted(data, key=itemgetter(0))
